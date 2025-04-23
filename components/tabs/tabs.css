@@ -1,0 +1,59 @@
+/* Reseteo y modo oscuro básico */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #111;
+    color: #fff;
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+  
+  /* --- Layout principal --- */
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;          /* llena la ventana */
+  }
+  
+  /* Barra de pestañas */
+  #tabs-container {
+    display: flex;
+    align-items: center;
+    background: #222;
+    padding: 4px;
+  }
+  
+  #tabs {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .tab {
+    background: #333;
+    padding: 6px 12px;
+    margin-right: 4px;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .tab.active   { background: #444; }
+  .tab .close   { margin-left: 8px; color: #e55; cursor: pointer; }
+  #add-tab      { background:#111; color:#fff; border:none; padding:6px 12px; cursor:pointer; }
+  
+  /* Contenedor del webview: se expande automáticamente */
+  #webview-container {
+    flex: 1 1 auto;        /* ¡La clave! ocupa todo lo que queda */
+    overflow: hidden;
+    position: relative;    /* por si queremos overlay futuro */
+  }
+  
+  /* Cada webview ocupa TODO el contenedor */
+  webview {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
